@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles.css";
+
+let gridDim = document.querySelector("input");
+const gridContainer = document.querySelector("#grid-container");
+const clear = document.querySelector('#clear');
 
 function App() {
   return (
