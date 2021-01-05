@@ -12,5 +12,7 @@ function genSects(gridDim) {
    sect.classList.add();
    gridContainer.appendChild(sect);
   }
+}
+function colorMenu(){
 
-export default App;
+}
