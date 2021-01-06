@@ -14,5 +14,8 @@ function genSects(gridDim) {
   }
 }
 function colorMenu(){
-
+  let colorR = Math.floor((Math.random() * 255) + 1);
+  let colorG = Math.floor((Math.random() * 255) + 1);
+  let colorB = Math.floor((Math.random() * 255) + 1);
+  square.style.backgroungColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
 }
