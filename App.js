@@ -19,3 +19,6 @@ function colorMenu(){
   let colorB = Math.floor((Math.random() * 255) + 1);
   square.style.backgroungColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
 }
+function dimensionAlter(){
+
+}
