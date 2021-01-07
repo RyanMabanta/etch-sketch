@@ -1,4 +1,3 @@
-import React from "react";
 import "./styles.css";
 
 let gridDim = document.querySelector("input");
@@ -16,14 +15,19 @@ function genSects(gridDim) {
    gridContainer.appendChild(sect);
   }
 }
-function colorMenu(){
+function colorMenu(square){
   let colorR = Math.floor((Math.random() * 255) + 1);
   let colorG = Math.floor((Math.random() * 255) + 1);
-  let colorB = Math.floor((Math.random() * 255) + 1);
-  square.style.backgroungColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
+  let colorB = Math.floor((Math.random() * 255) + 1)
+  square.style.backgroundColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
 }
-purple.addEventListener('click', function () {
+const rangeSlide = document.querySelector('#size-alter');
+const sizeDisplay = document.querySelector('#number-mark');
+purple.addEventListener('mouseover', function () {
   clearcheck();
   purple.classList.add('checked');
   status = "default";
 });
+randColBtn.addEventListener('click', function() {
+  
+})
