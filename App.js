@@ -4,6 +4,9 @@ import "./styles.css";
 let gridDim = document.querySelector("input");
 const gridContainer = document.querySelector("#grid-container");
 const clear = document.querySelector('#clear');
+const randColBtn = document.querySelector("#multicolored");
+const monoBtn = document.querySelector("#black");
+const purple = document.querySelector('#default');
 
 function genSects(gridDim) {
   let gridArr = gridDim * gridDim;
