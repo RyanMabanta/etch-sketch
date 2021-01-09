@@ -12,6 +12,8 @@ const randColBtn = document.querySelector("button.multicolored");
 const monoBtn = document.querySelector("button.black");
 const purple = document.querySelector("button.default");
 
+let currColor = "purple"; //default color
+
 // And then any global values...
 let gridDim = rangeSlide.value;
 
@@ -56,10 +58,10 @@ function colorModes(event) {
   // choose which modes to color
   switch (event.target.style.backgroundColor) {
     case "default":
-      color = "purple"; // revise this
+      currcolor = "purple"; 
       break;
     case "black":
-      color = "black"; //revise this
+      currcolor = "black";
       break;
     case "multicolor":
       colorMenu(this.value);
@@ -79,8 +81,15 @@ purple.addEventListener("mouseover", function () {
 randColBtn.addEventListener("click", function (event) {
   console.log(event.target);
 });
-clear.addEventListener("click", function (event) {});
-monoBtn.addEventListener("click", function (event) {});
-purple.addEventListener("click", function (event) {});
+
+clear.addEventListener("click", function (event) {
+  console.log(event.target);
+});
+monoBtn.addEventListener("click", function (event) {
+  console.log(event.target);
+});
+purple.addEventListener("click", function (event) {
+  console.log(event.target);
+});
 
 genSects(gridDim);
