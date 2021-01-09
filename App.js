@@ -79,5 +79,8 @@ purple.addEventListener("mouseover", function () {
 randColBtn.addEventListener("click", function (event) {
   console.log(event.target);
 });
+clear.addEventListener("click", function (event) {});
+monoBtn.addEventListener("click", function (event) {});
+purple.addEventListener("click", function (event) {});
 
 genSects(gridDim);
