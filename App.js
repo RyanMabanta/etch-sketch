@@ -10,7 +10,7 @@ const gridContainer = document.querySelector(".grid");
 const clear = document.querySelector("button.clear");
 const randColBtn = document.querySelector("button.multicolored");
 const monoBtn = document.querySelector("button.black");
-const purple = document.querySelector("button.default");
+const purple = document.querySelector("button.default")
 
 let currColor = "purple"; //default color
 
