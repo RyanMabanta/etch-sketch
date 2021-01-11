@@ -48,6 +48,7 @@ function genSects(gridDim) {
 
 // One of the palette functions, to color a square.
 function colorMenu(square) {
+  if(currColor === )
   let colorR = Math.floor(Math.random() * 255 + 1);
   let colorG = Math.floor(Math.random() * 255 + 1);
   let colorB = Math.floor(Math.random() * 255 + 1);
