@@ -1,5 +1,3 @@
-import "./styles.css";
-
 /*****
  * Group all the global DOM selectors up here.
  *****/
@@ -37,10 +35,11 @@ function genSects(gridDim) {
   let gridArr = gridDim * gridDim;
   // This will generate our cells, assign the class, and
   //   add our event listener.
+   gridContainer.setAttribute('style', `grid-template-columns: repeat(${gridDim}, 1fr); grid-template-rows: repeat(${gridDim}, 1fr);`);
   for (let x = 1; x <= gridArr; x++) {
     const sect = document.createElement("div");
     sect.classList.add("grid-cell");
-    sect.textContent = x;
+   // sect.textContent = x;
     sect.addEventListener("mouseover", cellOverHandler);
     gridContainer.appendChild(sect);
   }
@@ -48,26 +47,48 @@ function genSects(gridDim) {
 
 // One of the palette functions, to color a square.
 function colorMenu(square) {
-  if(currColor === )
-  let colorR = Math.floor(Math.random() * 255 + 1);
-  let colorG = Math.floor(Math.random() * 255 + 1);
-  let colorB = Math.floor(Math.random() * 255 + 1);
-  square.style.backgroundColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
+  if(currColor == "multicolored"){
+    let colorR = Math.floor(Math.random() * 255 + 1);
+    let colorG = Math.floor(Math.random() * 255 + 1);
+    let colorB = Math.floor(Math.random() * 255 + 1);
+    square.style.backgroundColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
+  }
+  else if(currColor == "purple"){
+    square.style.backgroundColor = '#800080';
+  }
+  else if (currColor == "black"){
+    square.style.backgroundColor = '#000000';
+  }
+  else{
+    square.style.backgroundColor = '#ffffff';
+  }
+  
 }
 
 function colorModes(event) {
   // choose which modes to color
   switch (event.target.style.backgroundColor) {
-    case "default":
-      currcolor = "purple"; 
-      break;
-    case "black":
-      currcolor = "black";
-      break;
-    case "multicolor":
+    case "multicolored":
       colorMenu(this.value);
       break;
+    case "default":
+      currcolor = "purple"; // revise this
+      colorMenu(currColor);
+      break;
+    case "black":
+      currcolor = "black"; //revise this
+      colorMenu(currColor);
+      break;
+    case "clear":
+      clearGrid();
+      break;
   }
+}
+
+function clearGrid(){
+    document.querySelectorAll(".grid-cell").forEach(element => {
+        element.style.backgroundColor = '#ffffff'
+    })
 }
 
 rangeSlide.addEventListener("change", function (event) {
@@ -80,17 +101,24 @@ purple.addEventListener("mouseover", function () {
   status = "default";
 });
 randColBtn.addEventListener("click", function (event) {
-  console.log(event.target);
+ // console.log(event.target);
+ currColor = "multicolored";
+ 
 });
 
 clear.addEventListener("click", function (event) {
-  console.log(event.target);
+ // console.log(event.target);
+ clearGrid();
 });
 monoBtn.addEventListener("click", function (event) {
-  console.log(event.target);
+ // console.log(event.target);
+ // colorModes(currColor);
+ currColor = "black";
 });
 purple.addEventListener("click", function (event) {
-  console.log(event.target);
+ // console.log(event.target);
+ // colorModes(currColor);
+ currColor = "purple";
 });
 
 genSects(gridDim);
