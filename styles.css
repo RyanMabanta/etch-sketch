@@ -1,8 +1,33 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  
+}
+.container {
+  display: flex;
 }
 .size-change {
   width: 50%;
 }
+.color-changers {
+  display: flex;
+  flex-direction: column;
+}
+.grid {
+  display: inline-grid;
+ // grid-template-columns: auto auto auto auto;
+  ///grid-template-columns: repeat(7, 0fr);
+  //grid-template-rows: repeat(7, 0fr);
+  
+  width: 85vmin;
+  height: 85vmin;
+  justify-content: center;
+}
 
+.grid-cell {
+  //width: 3rem;
+  //height: 3rem;
+  box-sizing: border-box;
+  border: 1px dotted maroon;
+  
+}
